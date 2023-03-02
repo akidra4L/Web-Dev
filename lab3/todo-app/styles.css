@@ -37,12 +37,15 @@ main .wrapper p {
 }
 
 main .wrapper .wrapper-add {
+    width: 500px;
     margin-bottom: 50px;
     padding-left: 50px;
+    display: flex;
+    align-items: center;
 }
 
 main .wrapper .wrapper-add input {
-    width: 80%;
+    width: 90%;
     height: 30px;
     margin-right: 15px;
     padding: 0 5px;

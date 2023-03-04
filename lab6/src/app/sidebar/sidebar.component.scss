@@ -1,0 +1,19 @@
+.sidebar {
+    padding-top: 50px;
+    height: 100vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid lightgray;
+
+    &-items {
+        height: 100%;
+
+        &-for {
+            padding-top: 10px;
+            font-size: 24px !important;
+            margin-right: 16px;
+        }
+    }
+}

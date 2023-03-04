@@ -1,0 +1,10 @@
+<div class="sidebar">
+  <div class="sidebar-name">
+    <h1>Menu</h1>
+  </div>
+  <div class="sidebar-items">
+    <div class="sidebar-items-for" *ngFor="let item of sidebarItems">
+      <a class="link" routerLink="{{ item.link }}"> {{ item.name }} </a>
+    </div>
+  </div>
+</div>

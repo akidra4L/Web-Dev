@@ -1,0 +1,23 @@
+.wrapper {
+    width: 80vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+    }
+
+    &-info {
+        padding-top: 30px;
+        padding-left: 50px;
+
+        &-item {
+            padding-top: 20px;
+        }
+    }
+}

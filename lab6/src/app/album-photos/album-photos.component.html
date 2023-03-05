@@ -1,1 +1,16 @@
-<p>album-photos works!</p>
+<div class="wrapper">
+  <div class="wrapper-title">
+    <button class="btn btn-primary" (click)="back()">Back</button>
+    <h1>Photos Page</h1>
+  </div>
+  <div class="wrapper-info">
+    <h2>{{ album.title }}</h2>
+
+    <div class="wrapper-info-photos">
+      <div class="wrapper-info-photos-photo" *ngFor="let photo of photos">
+        <img src="{{ photo.thumbnailUrl }}" alt="" />
+        <h3>{{ photo.title }}</h3>
+      </div>
+    </div>
+  </div>
+</div>

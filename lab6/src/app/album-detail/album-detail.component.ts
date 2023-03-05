@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 import { IAlbum } from 'src/models/albums';
+import { AlbumsService } from '../albums/albums.service';
 
 @Component({
   selector: 'app-album-detail',
@@ -10,9 +14,12 @@ import { IAlbum } from 'src/models/albums';
 export class AlbumDetailComponent implements OnInit {
 
   album: IAlbum;
+  newTitle: string;
+  faCheckIcon = faCheck; 
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private albumService: AlbumsService) {
     this.album = {} as IAlbum;
+    this.newTitle = "";
   }
 
   back() {
@@ -20,6 +27,27 @@ export class AlbumDetailComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.route.paramMap.subscribe(
+      (params) => {
+        let _id = params.get('id');
+        if (_id) {
+          let id = +_id;
+          this.albumService.getAlbum(id).subscribe(
+            (response) => {
+              this.album = response;
+            }
+          )
+        }
+      }
+    );
+  }
+
+  saveTitle() {
+    this.albumService.updateAlbumTitle(this.album.id, this.newTitle).subscribe(
+      (response) => {
+        this.album.title = response.title;
+        this.newTitle = "";
+      }
+    )
   }
 }

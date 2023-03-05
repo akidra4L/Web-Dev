@@ -3,5 +3,25 @@
     <button class="btn btn-primary" (click)="back()">Back</button>
     <h1>Album Page</h1>
   </div>
-  <div class="wrapper-info"></div>
+  <div class="wrapper-info">
+    <h2>{{ album.title }}</h2>
+
+    <div class="wrapper-info-edit">
+      <h2>
+        <input [(ngModel)]="newTitle" type="text" />
+      </h2>
+
+      <div class="wrapper-info-btns">
+        <button class="btn btn-primary" (click)="saveTitle()">
+          <fa-icon [icon]="faCheckIcon"></fa-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="wrapper-info-photos">
+      <h2>
+        <a class="link" routerLink="/albums/{{ album.id }}/photos">Photos</a>
+      </h2>
+    </div>
+  </div>
 </div>

@@ -18,11 +18,32 @@
     }
 
     &-info {
+        width: 100%;
+        height: 100%;
         padding-top: 30px;
         padding-left: 50px;
 
-        &-item {
-            padding-top: 20px;
+        &-edit {
+            padding-top: 10px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        &-btns {
+            width: 200px;
+            
+            button {
+                margin-top: 10px;
+                margin-left: 20px;
+            }
+        }
+
+        input {
+            padding: 10px;
+        }
+
+        &-photos {
+            padding-top: 50px;
         }
     }
 }

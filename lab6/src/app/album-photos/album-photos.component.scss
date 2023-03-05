@@ -1,0 +1,41 @@
+.wrapper {
+    width: 80vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+
+        button {
+            position: absolute;
+            left: 25%;
+        }
+    }
+
+    &-info {
+        width: 100%;
+        height: 100%;
+        padding-top: 30px;
+        padding-left: 50px;
+
+        &-photos {
+            width: 50%;
+            padding-top: 30px;
+
+            &-photo {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 50px;
+
+                h3 {
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}

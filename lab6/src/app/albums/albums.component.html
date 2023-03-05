@@ -4,7 +4,12 @@
   </div>
   <div class="wrapper-info">
     <div class="wrapper-info-item" *ngFor="let album of albums">
-      <a class="link" routerLink="{{ album.id }}">{{ album.id }} - {{ album.title }}</a>
+      <a class="link" routerLink="{{ album.id }}"
+        >{{ album.id }} - {{ album.title }}</a
+      >
+      <button class="btn btn-primary" (click)="handleDeleteAlbum(album)">
+        <fa-icon [icon]="faTrashIcon"></fa-icon>
+      </button>
     </div>
   </div>
 </div>

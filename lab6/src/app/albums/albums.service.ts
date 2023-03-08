@@ -20,6 +20,10 @@ export class AlbumsService {
     return this.http.get<IAlbum>(`https://jsonplaceholder.typicode.com/albums/${id}`);
   }
 
+  addAlbum(body: any): Observable<IAlbum> {
+    return this.http.post<IAlbum>(`https://jsonplaceholder.typicode.com/albums`, body);
+  }
+
   deleteAlbum(id: number): Observable<IAlbum> {
     return this.http.delete<IAlbum>(`https://jsonplaceholder.typicode.com/albums/${id}`);
   }

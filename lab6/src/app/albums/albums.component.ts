@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faAdd } from '@fortawesome/free-solid-svg-icons';
 
 import { AlbumsService } from './albums.service';
 import { IAlbum } from 'src/models/albums';
@@ -13,10 +13,13 @@ import { IAlbum } from 'src/models/albums';
 export class AlbumsComponent implements OnInit {
 
   albums: IAlbum[];
+  newAlbumTitle: string;
   faTrashIcon = faTrash;
+  faAddIcon = faAdd;
 
   constructor(private albumsService: AlbumsService) {
     this.albums = [];
+    this.newAlbumTitle = "";
   }
 
   ngOnInit(): void {
@@ -37,6 +40,21 @@ export class AlbumsComponent implements OnInit {
         if (index !== -1) {
           this.albums.splice(index, 1);
         }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  handleAddNewAlbum(): void {
+    if (this.newAlbumTitle === "") {
+      return;
+    }
+    
+    this.albumsService.addAlbum({ userId: this.albums.length + 1, id: this.albums.length + 1, title: this.newAlbumTitle }).subscribe(
+      (response) => {
+        this.albums.push(response);
       },
       (error) => {
         console.log(error);

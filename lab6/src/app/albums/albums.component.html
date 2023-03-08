@@ -11,5 +11,13 @@
         <fa-icon [icon]="faTrashIcon"></fa-icon>
       </button>
     </div>
+
+    <div class="wrapper-info-add">
+      <input type="text" placeholder="New Album" [(ngModel)]="newAlbumTitle" />
+
+      <button class="btn btn-primary" (click)="handleAddNewAlbum()">
+        <fa-icon [icon]="faAddIcon"></fa-icon>
+      </button>
+    </div>
   </div>
 </div>

@@ -22,5 +22,15 @@
             display: flex;
             justify-content: space-between;
         }
+
+        &-add {
+            display: flex;
+            align-items: center;
+            padding-top: 30px;
+
+            button {
+                margin-left: 30px;
+            }
+        }
     }
 }

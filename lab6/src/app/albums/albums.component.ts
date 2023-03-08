@@ -31,9 +31,16 @@ export class AlbumsComponent implements OnInit {
   }
 
   handleDeleteAlbum(album: IAlbum): void {
-    const index = this.albums.indexOf(album);
-    if (index !== -1) {
-      this.albums.splice(index, 1);
-    }
+    this.albumsService.deleteAlbum(album.id).subscribe(
+      (response) => {
+        const index = this.albums.indexOf(album);
+        if (index !== -1) {
+          this.albums.splice(index, 1);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

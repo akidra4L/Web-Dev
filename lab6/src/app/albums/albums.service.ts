@@ -20,6 +20,10 @@ export class AlbumsService {
     return this.http.get<IAlbum>(`https://jsonplaceholder.typicode.com/albums/${id}`);
   }
 
+  deleteAlbum(id: number): Observable<IAlbum> {
+    return this.http.delete<IAlbum>(`https://jsonplaceholder.typicode.com/albums/${id}`);
+  }
+
   updateAlbumTitle(id: number, newTitle: string): Observable<any> {
     return this.http.put(`https://jsonplaceholder.typicode.com/albums/${id}`, { title: newTitle })
       .pipe(catchError((error) => throwError(error)));

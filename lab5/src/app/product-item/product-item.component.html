@@ -1,4 +1,4 @@
-<div class="wrapper-item">
+<!-- <div class="wrapper-item">
   <div class="wrapper-item-img"><img [src]="product.imgURL" /></div>
 
   <div class="wrapper-item-right">
@@ -19,4 +19,27 @@
       <button (click)="handleDelete()">X</button>
     </div>
   </div>
-</div>
+</div> -->
+
+<mat-card class="wrapper-item">
+  <mat-card-header>
+    <div class="wrapper-item-img">
+      <img mat-card-image [src]="product.imgURL" alt="Photo" />
+    </div>
+  </mat-card-header>
+  <mat-card-content class="wrapper-item-right">
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <p>
+      {{ product.description }}
+    </p>
+    <p><b>Рейтинг:</b> {{ product.rating }}</p>
+    <p><b>Цена:</b> {{ formatedPrice(product.price) }} ₸</p>
+    <p><b>Нравится:</b> {{ product.likes }}</p>
+    <mat-card-actions class="buttons">
+      <button mat-button (click)="handleLike()">
+        <fa-icon [icon]="heart"></fa-icon>
+      </button>
+      <button (click)="handleDelete()">X</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

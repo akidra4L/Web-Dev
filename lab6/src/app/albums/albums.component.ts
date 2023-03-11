@@ -5,6 +5,8 @@ import { faTrash, faAdd } from '@fortawesome/free-solid-svg-icons';
 import { AlbumsService } from './albums.service';
 import { IAlbum } from 'src/models/albums';
 
+import { interval, take , map} from 'rxjs';
+
 @Component({
   selector: 'app-albums',
   templateUrl: './albums.component.html',
@@ -17,20 +19,26 @@ export class AlbumsComponent implements OnInit {
   faTrashIcon = faTrash;
   faAddIcon = faAdd;
 
+  numbers = interval(100);
+  takeThree = this.numbers.pipe(take(10));
+
   constructor(private albumsService: AlbumsService) {
     this.albums = [];
     this.newAlbumTitle = "";
   }
 
   ngOnInit(): void {
-    this.albumsService.getAlbums().subscribe(
-      (response) => {
-        this.albums = response.slice(0, 10);
+    this.albumsService.getAlbums().pipe(
+      map( x=> x.slice(0,10))
+    ).subscribe((response) => {
+        this.albums = response;
       },
       (error) => {
         console.log(error);
       }
     );
+
+    this.takeThree.subscribe(value => console.log("Value: ", value));
   }
 
   handleDeleteAlbum(album: IAlbum): void {

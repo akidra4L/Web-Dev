@@ -8,8 +8,14 @@
   </div>
 
   <div class="wrapper-container">
-    <div class="wrapper-products" *ngIf="handleCategory(currentCategory).length > 0">
-      <div *ngFor="let product of handleCategory(currentCategory)" class="wrapper-products-items">
+    <div
+      class="wrapper-products"
+      *ngIf="handleCategory(currentCategory).length > 0"
+    >
+      <div
+        *ngFor="let product of handleCategory(currentCategory)"
+        class="wrapper-products-items"
+      >
         <app-product-item
           [product]="product"
           (likesUpdate)="updateLike($event, product)"
@@ -20,7 +26,10 @@
         </div>
       </div>
     </div>
-    <div class="wrapper-products" *ngIf="handleCategory(currentCategory).length === 0">
+    <div
+      class="wrapper-products"
+      *ngIf="handleCategory(currentCategory).length === 0"
+    >
       <h2>Пусто</h2>
     </div>
   </div>

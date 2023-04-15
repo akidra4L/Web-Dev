@@ -1,0 +1,5 @@
+<p>Hello to the detail page of {{ company.name }}!</p>
+<p>Description: {{ company.description }}</p>
+<a [routerLink]="['/companies', company.id, 'vacancies']">
+  List of our vacancies
+</a>

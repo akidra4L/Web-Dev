@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    padding: 0;
+    margin: 0px;
+}
+
+a {
+    color: black;
+}
+
+li a {
+    text-decoration: none;
+}
+
+ul {
+    background-color:crimson;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li:hover {
+    background-color: darkred;
+}
+
+ul li a:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+}

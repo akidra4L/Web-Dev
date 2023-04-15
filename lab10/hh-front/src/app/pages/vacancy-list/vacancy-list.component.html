@@ -1,0 +1,9 @@
+<h1>Vacancies:</h1>
+
+<div class="list">
+  <div *ngFor="let vacancy of vacancies" class="item">
+    <p>Vacancy name: {{ vacancy.name }}</p>
+    <p>Salary: {{ vacancy.salary }}</p>
+    <a [routerLink]="['/vacancies', vacancy.id]"> Vacancy Details </a>
+  </div>
+</div>

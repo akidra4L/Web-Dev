@@ -1,0 +1,29 @@
+#nav {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+} 
+
+#nav li {
+    float: left;
+    border-right: 1px solid #C9A66B;
+    border-left: 1px solid #C9A66B;
+}
+
+#nav li a,button {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    background: none;
+    border: none;
+}

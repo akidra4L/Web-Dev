@@ -13,7 +13,7 @@ class CompanySerializer(serializers.Serializer):
     description = serializers.CharField(max_length=255, required=False)
     city = serializers.CharField(max_length=255, required=False)
     address = serializers.CharField(max_length=255, required=False)
-    vacancies = VacancySerializer(source='vacancy_set', many=True)
+    vacancies = VacancySerializer(source='vacancy_set', many=True, required=False)
 
     def create(self, validated_data):
         return Company.objects.create(**validated_data)
